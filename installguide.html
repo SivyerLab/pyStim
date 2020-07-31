@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Install walkthrough &#8212; pyStim 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Usage guide" href="usageguide.html" />
+    <link rel="prev" title="Readme" href="readmelink.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="usageguide.html" title="Usage guide"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="readmelink.html" title="Readme"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyStim 1.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Install walkthrough</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="install-walkthrough">
+<h1>Install walkthrough<a class="headerlink" href="#install-walkthrough" title="Permalink to this headline">¶</a></h1>
+<p>The following instructions are for Windows machines. The instructions are mostly similar for OSX/Linux. If you run into
+a problem with installing wxPython, please see the wxPython <a class="reference external" href="https://www.wxpython.org/">website</a> for help.</p>
+<div class="section" id="installing-pystim">
+<h2>Installing PyStim<a class="headerlink" href="#installing-pystim" title="Permalink to this headline">¶</a></h2>
+<p>The following walkthrough uses Anaconda, an all in one Python environment manager. Unless otherwise noted, leave options
+during install as defaults.</p>
+<p>Enter lines of code in the terminal/command line. To open the command prompt, hit Windows + r, and type “cmd”.</p>
+<p><strong>NOTE:</strong> to paste text copied from this guide into the terminal command: use mouse right click and paste. Ctrl + v will
+not work.</p>
+<ol class="arabic">
+<li><p>Install <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>. Two important options during install must be adhered to: Check the option to add conda to
+your PATH environment variable, and select the option to install conda only for the local user, NOT all users.</p></li>
+<li><p>Install <a class="reference external" href="https://git-scm.com/downloads">Git</a> (version control tool). Make sure to select the option to add git to your PATH variable
+(“Git from the command line and also from 3rd-party software”).</p></li>
+<li><p>Navigate to where you want to install the pyStim repository (ex: C:/Users/sivyer/stimulus_software):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="s2">&quot;C:/Users/sivyer/stimulus_software&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Download the repository (a new folder called pystim will be automatically created):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">SivyerLab</span><span class="o">/</span><span class="n">pystim</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</li>
+<li><p>Create a conda environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">y</span> <span class="o">-</span><span class="n">n</span> <span class="n">pystim</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.8</span>
+</pre></div>
+</div>
+</li>
+<li><p>Activate the environment. You should see <cite>(pystim)</cite> prepend lines on the command prompt after this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">pystim</span>
+</pre></div>
+</div>
+</li>
+<li><p>Install all the necessary packages:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">psychopy</span> <span class="n">sortedcontainers</span>
+</pre></div>
+</div>
+</li>
+<li><p>(OPTIONAL) If you wish to be able to save captures of your stims, install <a class="reference external" href="https://www.ffmpeg.org/">ffmpeg</a>.</p></li>
+<li><p>(OPTIONAL) If you wish to be able to playback movies, install <a class="reference external" href="http://avbin.github.io/AVbin/Download.html">avbin</a>.</p></li>
+<li><p>(OPTIONAL) If needing to trigger an external device using a labjack install the labjack “UD driver” from the
+<a class="reference external" href="https://labjack.com/support/software/examples/ud/labjackpython">labjack website</a>. Then install the labjack package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">labjack</span><span class="o">/</span><span class="n">LabJackPython</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</li>
+<li><p>(OPTIONAL) If you wish to interface with a TI Lightcrafter 4500, install <a class="reference external" href="https://github.com/SivyerLab/pyCrafter4500">pycrafter4500</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pycrafter4500</span>
+</pre></div>
+</div>
+</li>
+<li><p>Navigate to pystim.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pystim</span>
+</pre></div>
+</div>
+</li>
+<li><p>Run the pyStim GUI.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">pyStim</span><span class="o">/</span><span class="n">pyStimGUI</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Install walkthrough</a><ul>
+<li><a class="reference internal" href="#installing-pystim">Installing PyStim</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="readmelink.html"
+                        title="previous chapter">Readme</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="usageguide.html"
+                        title="next chapter">Usage guide</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/installguide.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="usageguide.html" title="Usage guide"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="readmelink.html" title="Readme"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyStim 1.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Install walkthrough</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Alexander Tomlinson.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+    </div>
+  </body>
+</html>

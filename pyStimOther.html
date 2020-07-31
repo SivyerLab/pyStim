@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other classes &#8212; pyStim 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Other functions" href="pyStimOtherMethods.html" />
+    <link rel="prev" title="Checkerboard Stim" href="BoardTexture.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyStimOtherMethods.html" title="Other functions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="BoardTexture.html" title="Checkerboard Stim"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyStim 1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pyStim.html" accesskey="U">StimProgram module</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Other classes</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="other-classes">
+<h1>Other classes<a class="headerlink" href="#other-classes" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="pyStim.StimInfo">
+<em class="property">class </em><code class="sig-prename descclassname">pyStim.</code><code class="sig-name descname">StimInfo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stim_type</span></em>, <em class="sig-param"><span class="n">parameters</span></em>, <em class="sig-param"><span class="n">number</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#StimInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.StimInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Class for storing type and parameters of a stim.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>stim_type</strong> (<em>string</em>) – The move type of the stim, such as static,
+random, table, etc.</p></li>
+<li><p><strong>parameters</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a>) – Dictionary of parameters passed from GUI.</p></li>
+<li><p><strong>number</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – For order of stims.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="pyStim.GlobalDefaultsMeta">
+<em class="property">class </em><code class="sig-prename descclassname">pyStim.</code><code class="sig-name descname">GlobalDefaultsMeta</code><a class="reference internal" href="_modules/pyStim.html#GlobalDefaultsMeta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.GlobalDefaultsMeta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code></a></p>
+<p>Metaclass to redefine get and set item for <a class="reference internal" href="#pyStim.GlobalDefaults" title="pyStim.GlobalDefaults"><code class="xref py py-class docutils literal notranslate"><span class="pre">GlobalDefaults</span></code></a>.</p>
+<dl class="py method">
+<dt id="pyStim.GlobalDefaultsMeta.__getitem__">
+<code class="sig-name descname">__getitem__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#GlobalDefaultsMeta.__getitem__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.GlobalDefaultsMeta.__getitem__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyStim.GlobalDefaultsMeta.__setitem__">
+<code class="sig-name descname">__setitem__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#GlobalDefaultsMeta.__setitem__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.GlobalDefaultsMeta.__setitem__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pyStim.GlobalDefaults">
+<em class="property">class </em><code class="sig-prename descclassname">pyStim.</code><code class="sig-name descname">GlobalDefaults</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">frame_rate</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pix_per_micron</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">display_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">position</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">protocol_reps</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">background</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pref_dir</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">fullscreen</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">screen_num</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">small_win_num</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">trigger_wait</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gamma_correction</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">offset</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">capture</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">small_win</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">framepack</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#GlobalDefaults"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.GlobalDefaults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Class with global constants, such as window information.</p>
+<p>metaclass: allow static __getitem__ and __setitem__</p>
+<p>TODO: better, more pythonic, way to do this</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frame_rate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Frame rate of monitor.</p></li>
+<li><p><strong>pix_per_micron</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – Number of pixels per micron. Used for unit
+conversion.</p></li>
+<li><p><strong>scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – The factor by which to scale the size of the stimuli.</p></li>
+<li><p><strong>display_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – List of height and width of the monitor.</p></li>
+<li><p><strong>position</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a>) – List of xy coordinates of stim window location.</p></li>
+<li><p><strong>protocol_reps</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Number of repetitions to cycle through of all
+stims.</p></li>
+<li><p><strong>background</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a>) – RGB list of window background.</p></li>
+<li><p><strong>pref_dir</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – Cell preferred direction. If not -1, overrides
+start_dir.</p></li>
+<li><p><strong>fullscreen</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – Boolean, whether or not window should be
+fullscreen.</p></li>
+<li><p><strong>screen_num</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – On which monitor to display the window.</p></li>
+<li><p><strong>gamma_correction</strong> (<em>string</em>) – Spline to use for gamma correction. See
+:doc:’GammaCorrection’ documentation.</p></li>
+<li><p><strong>trigger_wait</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – The wait time between the labjack sending a
+pulse and the start of the stims.</p></li>
+<li><p><strong>log</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – Whether or not to write to a log file.</p></li>
+<li><p><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a>) – List of microns in xy coordinates of how much to
+offset the center of the window.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="pyStim.GlobalDefaults.defaults">
+<code class="sig-name descname">defaults</code><em class="property"> = {'background': [0, 0, 0], 'capture': False, 'display_size': [400, 400], 'frame_rate': 60, 'framepack': False, 'fullscreen': False, 'gamma_correction': 'default', 'log': False, 'offset': [0, 0], 'pix_per_micron': 1, 'position': [0, 0], 'pref_dir': -1, 'protocol_reps': 1, 'scale': 1, 'screen_num': 0, 'small_win': False, 'small_win_num': 0, 'trigger_wait': 6}</em><a class="headerlink" href="#pyStim.GlobalDefaults.defaults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dictionary of default defaults.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pyStim.MyWindow">
+<em class="property">class </em><code class="sig-prename descclassname">pyStim.</code><code class="sig-name descname">MyWindow</code><a class="reference internal" href="_modules/pyStim.html#MyWindow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.MyWindow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Class with static methods for window management and triggering.</p>
+<dl class="py attribute">
+<dt id="pyStim.MyWindow.win">
+<code class="sig-name descname">win</code><em class="property"> = None</em><a class="headerlink" href="#pyStim.MyWindow.win" title="Permalink to this definition">¶</a></dt>
+<dd><p>Psychopy window instances.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pyStim.MyWindow.small_win">
+<code class="sig-name descname">small_win</code><em class="property"> = None</em><a class="headerlink" href="#pyStim.MyWindow.small_win" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pyStim.MyWindow.gamma_mon">
+<code class="sig-name descname">gamma_mon</code><em class="property"> = None</em><a class="headerlink" href="#pyStim.MyWindow.gamma_mon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gamma correction instance. See <a class="reference internal" href="GammaCorrection.html#module-GammaCorrection" title="GammaCorrection"><code class="xref py py-class docutils literal notranslate"><span class="pre">GammaCorrection</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pyStim.MyWindow.should_break">
+<code class="sig-name descname">should_break</code><em class="property"> = False</em><a class="headerlink" href="#pyStim.MyWindow.should_break" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to break out of animation loop in <a class="reference internal" href="pyStimOtherMethods.html#pyStim.main" title="pyStim.main"><code class="xref py py-func docutils literal notranslate"><span class="pre">main()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pyStim.MyWindow.running">
+<code class="sig-name descname">running</code><em class="property"> = False</em><a class="headerlink" href="#pyStim.MyWindow.running" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pyStim.MyWindow.d">
+<code class="sig-name descname">d</code><em class="property"> = None</em><a class="headerlink" href="#pyStim.MyWindow.d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Labjack U3 instance for triggering.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pyStim.MyWindow.frame_trigger_list">
+<code class="sig-name descname">frame_trigger_list</code><em class="property"> = SortedList([inf])</em><a class="headerlink" href="#pyStim.MyWindow.frame_trigger_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of frames to trigger on</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pyStim.MyWindow.framepacker">
+<code class="sig-name descname">framepacker</code><em class="property"> = None</em><a class="headerlink" href="#pyStim.MyWindow.framepacker" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pyStim.MyWindow.mirror_counter">
+<code class="sig-name descname">mirror_counter</code><em class="property"> = 0</em><a class="headerlink" href="#pyStim.MyWindow.mirror_counter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyStim.MyWindow.make_win">
+<em class="property">static </em><code class="sig-name descname">make_win</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#MyWindow.make_win"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.MyWindow.make_win" title="Permalink to this definition">¶</a></dt>
+<dd><p>Static method to create window from global parameters. Checks if
+gamma correction splines are present. Also instantiates labjack if
+present.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyStim.MyWindow.close_win">
+<em class="property">static </em><code class="sig-name descname">close_win</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#MyWindow.close_win"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.MyWindow.close_win" title="Permalink to this definition">¶</a></dt>
+<dd><p>Static method to close window. Also closes labjack if present.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyStim.MyWindow.change_color">
+<em class="property">static </em><code class="sig-name descname">change_color</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#MyWindow.change_color"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.MyWindow.change_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Static method to live update the background of the window.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>color</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a>) – RGB list used to change global defaults.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyStim.MyWindow.make_small_win">
+<em class="property">static </em><code class="sig-name descname">make_small_win</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#MyWindow.make_small_win"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.MyWindow.make_small_win" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes a small window to see what’s being show on the projector.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyStim.MyWindow.flip">
+<em class="property">static </em><code class="sig-name descname">flip</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#MyWindow.flip"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.MyWindow.flip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes proper calls to flip windows</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyStim.MyWindow.send_trigger">
+<em class="property">static </em><code class="sig-name descname">send_trigger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#MyWindow.send_trigger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.MyWindow.send_trigger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Triggers recording device by sending short voltage spike from LabJack
+U3-HV. Spike lasts approximately 0.4 ms if connected via high speed USB
+(2.0). Ensure high enough sampling rate to reliably detect triggers.
+Set to use flexible IO #4 (FIO4).</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="BoardTexture.html"
+                        title="previous chapter">Checkerboard Stim</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pyStimOtherMethods.html"
+                        title="next chapter">Other functions</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pyStimOther.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyStimOtherMethods.html" title="Other functions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="BoardTexture.html" title="Checkerboard Stim"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyStim 1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pyStim.html" >StimProgram module</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Other classes</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Alexander Tomlinson.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Stim &#8212; pyStim 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Checkerboard Stim" href="BoardTexture.html" />
+    <link rel="prev" title="Randomly Moving Stim" href="RandomlyMovingStim.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="BoardTexture.html" title="Checkerboard Stim"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="RandomlyMovingStim.html" title="Randomly Moving Stim"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyStim 1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pyStim.html" accesskey="U">StimProgram module</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Table Stim</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="table-stim">
+<h1>Table Stim<a class="headerlink" href="#table-stim" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="pyStim.TableStim">
+<em class="property">class </em><code class="sig-prename descclassname">pyStim.</code><code class="sig-name descname">TableStim</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#TableStim"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.TableStim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="MovingStim.html#pyStim.MovingStim" title="pyStim.MovingStim"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyStim.MovingStim</span></code></a></p>
+<p>Class where stim motion is determined by a table of radial coordinates.</p>
+<p>Table can be a text file with tab or space separated values and newlines
+between rows, or an Igor file in binary wave/packed experiment format.
+Trigger will occur right before frame where indicated position is
+flipped. First and last coordinate will always trigger (if stim is set to
+trigger).</p>
+<p>For a binary wave file, accepted formats are polar and coordinate,
+and triggering will only happen on first coordinate. For packed
+experiment files, leave wave names as ‘wave0’ and ‘wave1’, where ‘wave0’
+is coordinates and ‘wave1’ is whether or not to trigger (if polar),
+or as ‘wave0’, ‘wave1’, ‘wave2’ (if xy).</p>
+<p>There are 3 table types: polar, coordinate, or direction. Their formats
+are as follows.</p>
+<p>Polar: Tab or space separated values. Each line must include both a
+radius, and then whether or not to trigger for that frame (as a 0 or 1).</p>
+<p>Coordinate: Tab or space separated values. Each line must include an x
+coordinate, a y coordinate, and whether or not to trigger (as 0 or 1).</p>
+<p>Direction: Tab or space separated values. Each line must include a
+movement speed (pix/sec), a duration (ms), and a direction in degrees.
+Optionally, direction can be replaced with ‘$’ (dollar sign), and the
+direction will default to the global default (can also do use ‘-$’).</p>
+<dl class="py method">
+<dt id="pyStim.TableStim.draw_times">
+<code class="sig-name descname">draw_times</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#TableStim.draw_times"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.TableStim.draw_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines during which frames stim should be drawn, based on desired
+delay and duration times. Overrides super method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>last frame number as int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyStim.TableStim.gen_pos">
+<code class="sig-name descname">gen_pos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#TableStim.gen_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.TableStim.gen_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides super method. Calls gen_pos_array() and resets frame
+counter.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyStim.TableStim.gen_pos_array">
+<code class="sig-name descname">gen_pos_array</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#TableStim.gen_pos_array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.TableStim.gen_pos_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates 2 arrays for x, y coordinates of stims for each frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the x, y coordinates of the stim for every frame as 2 arrays</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p>ImportError: if attempts to load from an Igor file without
+having the igor module.</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p>IOError: raised if file contents not properly formatted.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="RandomlyMovingStim.html"
+                        title="previous chapter">Randomly Moving Stim</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="BoardTexture.html"
+                        title="next chapter">Checkerboard Stim</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/TableStim.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="BoardTexture.html" title="Checkerboard Stim"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="RandomlyMovingStim.html" title="Randomly Moving Stim"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyStim 1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pyStim.html" >StimProgram module</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Table Stim</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Alexander Tomlinson.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other functions &#8212; pyStim 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="gui module" href="gui.html" />
+    <link rel="prev" title="Other classes" href="pyStimOther.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="gui.html" title="gui module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pyStimOther.html" title="Other classes"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyStim 1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pyStim.html" accesskey="U">StimProgram module</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Other functions</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="other-functions">
+<h1>Other functions<a class="headerlink" href="#other-functions" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="pyStim.main">
+<code class="sig-prename descclassname">pyStim.</code><code class="sig-name descname">main</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stim_list</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to create stims and run program. Creates instances of stim
+types, and makes necessary calls to animate stims and flip window.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>stim_list</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a>) – list of StimInfo classes.</p></li>
+<li><p><strong>verbose</strong> (<em>boolean</em>) – whether or not to print stim info to console.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return fps, count_elapsed_time, time_stamp</dt>
+<dd class="field-even"><p>return stats about last run.
+If error was raised, fps is the error string, and count_elapsed_time is
+‘error’.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyStim.log_stats">
+<code class="sig-prename descclassname">pyStim.</code><code class="sig-name descname">log_stats</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">count_reps</span></em>, <em class="sig-param"><span class="n">reps</span></em>, <em class="sig-param"><span class="n">count_frames</span></em>, <em class="sig-param"><span class="n">num_frames</span></em>, <em class="sig-param"><span class="n">elapsed_time</span></em>, <em class="sig-param"><span class="n">stim_list</span></em>, <em class="sig-param"><span class="n">to_animate</span></em>, <em class="sig-param"><span class="n">time_at_run</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#log_stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.log_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to write information about stims to file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>count_reps</strong> – Elapsed reps.</p></li>
+<li><p><strong>reps</strong> – Total possible reps.</p></li>
+<li><p><strong>count_frames</strong> – Elapsed frames.</p></li>
+<li><p><strong>num_frames</strong> – Total possible frames.</p></li>
+<li><p><strong>elapsed_time</strong> – Elapsed time</p></li>
+<li><p><strong>stim_list</strong> – List of stims that ran.</p></li>
+<li><p><strong>to_animate</strong> – List of stims animated (includes annuli)</p></li>
+<li><p><strong>time_at_run</strong> – Time at which stims were run</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyStim.save_movie">
+<code class="sig-prename descclassname">pyStim.</code><code class="sig-name descname">save_movie</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">current_time</span></em>, <em class="sig-param"><span class="n">save_loc</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#save_movie"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.save_movie" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves movies to file from saved pngs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>current_time</strong> – current time</p></li>
+<li><p><strong>save_loc</strong> – save location</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyStim.stim_factory">
+<code class="sig-prename descclassname">pyStim.</code><code class="sig-name descname">stim_factory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stim</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#stim_factory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.stim_factory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiates a stim class from a StimInfo class</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>stim</strong> – stim type with parameters</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a stim class from stim_map</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyStim.animation_loop">
+<code class="sig-prename descclassname">pyStim.</code><code class="sig-name descname">animation_loop</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">to_animate</span></em>, <em class="sig-param"><span class="n">num_frames</span></em>, <em class="sig-param"><span class="n">current_time</span></em>, <em class="sig-param"><span class="n">save_loc</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#animation_loop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.animation_loop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function where animation logic is carried out, along with other helper tasks</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>to_animate</strong> – list of stims being animated</p></li>
+<li><p><strong>num_frames</strong> – number of frames to animate for</p></li>
+<li><p><strong>current_time</strong> – time at call to animate</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pyStimOther.html"
+                        title="previous chapter">Other classes</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gui.html"
+                        title="next chapter">gui module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pyStimOtherMethods.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="gui.html" title="gui module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pyStimOther.html" title="Other classes"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyStim 1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pyStim.html" >StimProgram module</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Other functions</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Alexander Tomlinson.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+    </div>
+  </body>
+</html>

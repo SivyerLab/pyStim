@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Stim &#8212; pyStim 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Randomly Moving Stim" href="RandomlyMovingStim.html" />
+    <link rel="prev" title="Static Stim" href="StaticStim.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="RandomlyMovingStim.html" title="Randomly Moving Stim"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="StaticStim.html" title="Static Stim"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyStim 1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pyStim.html" accesskey="U">StimProgram module</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Moving Stim</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="moving-stim">
+<h1>Moving Stim<a class="headerlink" href="#moving-stim" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="pyStim.MovingStim">
+<em class="property">class </em><code class="sig-prename descclassname">pyStim.</code><code class="sig-name descname">MovingStim</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#MovingStim"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.MovingStim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="StaticStim.html#pyStim.StaticStim" title="pyStim.StaticStim"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyStim.StaticStim</span></code></a></p>
+<p>Class for stims moving radially inwards. Overrides several methods.</p>
+<dl class="py method">
+<dt id="pyStim.MovingStim.draw_times">
+<code class="sig-name descname">draw_times</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#MovingStim.draw_times"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.MovingStim.draw_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines during which frames stim should be drawn, based on desired
+delay and duration times. Overrides super method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>last frame number as int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyStim.MovingStim.animate">
+<code class="sig-name descname">animate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">frame</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#MovingStim.animate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.MovingStim.animate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method for animating moving stims. Moves stims appropriately,
+then makes call to animate of super.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>frame</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – current frame number</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyStim.MovingStim.gen_pos">
+<code class="sig-name descname">gen_pos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#MovingStim.gen_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.MovingStim.gen_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes calls to gen_start_pos() and gen_pos_array() with proper
+variables to get new array of position coordinates.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyStim.MovingStim.gen_start_pos">
+<code class="sig-name descname">gen_start_pos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">direction</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#MovingStim.gen_start_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.MovingStim.gen_start_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates starting position in x, y coordinates on the starting
+radius based on travel direction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>direction</strong> – starting position on border of frame based on travel</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>starting position on border of frame based on travel angle
+origin</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyStim.MovingStim.gen_pos_array">
+<code class="sig-name descname">gen_pos_array</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_x</span></em>, <em class="sig-param"><span class="n">start_y</span></em>, <em class="sig-param"><span class="n">num_frames</span></em>, <em class="sig-param"><span class="n">angle</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#MovingStim.gen_pos_array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.MovingStim.gen_pos_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates 2 arrays for x, y coordinates of stims for each frame.</p>
+<p>Adapted from code By David L. Morton, used under MIT License. Source:
+<a class="reference external" href="https://code.google.com/p/computational-neuroscience/source/browse/trunk/projects/electrophysiology/stimuli/randomly_moving_checkerboard_search.py/#40">https://code.google.com/p/computational-neuroscience/source/browse/trunk/projects/electrophysiology/stimuli/randomly_moving_checkerboard_search.py/#40</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start_x</strong> – starting x coordinate</p></li>
+<li><p><strong>start_y</strong> – starting y coordinate</p></li>
+<li><p><strong>num_frames</strong> – number of frames stim will travel for</p></li>
+<li><p><strong>angle</strong> – travel direction</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the x, y coordinates of the stim for every frame as 2 arrays</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyStim.MovingStim.get_next_pos">
+<code class="sig-name descname">get_next_pos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#MovingStim.get_next_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.MovingStim.get_next_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the next coordinate from x, y_array for animate to set the
+position of the stim for the next frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>x, y coordinate as tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyStim.MovingStim.set_pos">
+<code class="sig-name descname">set_pos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#MovingStim.set_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.MovingStim.set_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Position setter. Necessary for alternate position setting in subclasses.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – x coordinate</p></li>
+<li><p><strong>y</strong> – y coordinate</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyStim.MovingStim.get_pos">
+<code class="sig-name descname">get_pos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyStim.html#MovingStim.get_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyStim.MovingStim.get_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Position getter.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="StaticStim.html"
+                        title="previous chapter">Static Stim</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="RandomlyMovingStim.html"
+                        title="next chapter">Randomly Moving Stim</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/MovingStim.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="RandomlyMovingStim.html" title="Randomly Moving Stim"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="StaticStim.html" title="Static Stim"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyStim 1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pyStim.html" >StimProgram module</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Moving Stim</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Alexander Tomlinson.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+    </div>
+  </body>
+</html>

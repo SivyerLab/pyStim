@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GammaCorrection module &#8212; pyStim 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="gui module" href="gui.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="gui.html" title="gui module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyStim 1.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GammaCorrection module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-GammaCorrection">
+<span id="gammacorrection-module"></span><h1>GammaCorrection module<a class="headerlink" href="#module-GammaCorrection" title="Permalink to this headline">¶</a></h1>
+<p>Script for setting the gamma correction table for psychopy. Steps through
+luminosity intervals while user records values, then prompts for table.
+Can skip the luminosity stepping and go straight to table. Table is
+text file, with newline separated values, and each color (in RGB order)
+separated by 2 new lines.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.22</span>
+<span class="mf">0.23</span>
+<span class="mf">0.23</span>
+<span class="mf">0.25</span>
+<span class="mf">0.26</span>
+
+<span class="mf">0.22</span>
+<span class="mf">0.23</span>
+<span class="mf">0.24</span>
+<span class="mf">0.26</span>
+<span class="mf">0.27</span>
+
+<span class="mf">0.22</span>
+<span class="mf">0.23</span>
+<span class="mf">0.23</span>
+<span class="mf">0.24</span>
+<span class="mf">0.25</span>
+</pre></div>
+</div>
+<p>The script can be invoked from the command line/terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">GammaCorrection</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Psychopy has built in gamma correction. This script provides an alternative
+to that due to difficulties using it with a second monitor on some platforms.
+See the psychopy documentation for information on using the built in gamma
+correction.</p>
+<dl class="py class">
+<dt id="GammaCorrection.GammaValues">
+<em class="property">class </em><code class="sig-prename descclassname">GammaCorrection.</code><code class="sig-name descname">GammaValues</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">r</span></em>, <em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GammaCorrection.html#GammaValues"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GammaCorrection.GammaValues" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Class to hold values for gamma correcting and returning calculations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>r</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><em>tuple</em></a>) – Tuple of spline, slope, intercept for red gun</p></li>
+<li><p><strong>g</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><em>tuple</em></a>) – Tuple of spline, slope, intercept for green gun</p></li>
+<li><p><strong>b</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><em>tuple</em></a>) – Tuple of spline, slope, intercept for blue gun</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="GammaCorrection.GammaValues.r_correct">
+<code class="sig-name descname">r_correct</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">r</span></em>, <em class="sig-param"><span class="n">q</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GammaCorrection.html#GammaValues.r_correct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GammaCorrection.GammaValues.r_correct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to gamma correct red channel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>corrected red color</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="GammaCorrection.GammaValues.g_correct">
+<code class="sig-name descname">g_correct</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">q</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GammaCorrection.html#GammaValues.g_correct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GammaCorrection.GammaValues.g_correct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to gamma correct green channel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>corrected green color</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="GammaCorrection.GammaValues.b_correct">
+<code class="sig-name descname">b_correct</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">b</span></em>, <em class="sig-param"><span class="n">q</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GammaCorrection.html#GammaValues.b_correct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GammaCorrection.GammaValues.b_correct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to gamma correct blue channel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>corrected blue color</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="GammaCorrection.GammaValues.__call__">
+<code class="sig-name descname">__call__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color</span></em>, <em class="sig-param"><span class="n">channel</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GammaCorrection.html#GammaValues.__call__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GammaCorrection.GammaValues.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates adjusted color value. Allows getting corrected values by
+making calls to instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>color</strong> – List of RGB values, scaled from -1 to 1, or color
+from a single channel.</p></li>
+<li><p><strong>channel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – If color is passed as a single number, channel is
+the color channel.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Adjusted list of RGB values, or single adjusted color.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="GammaCorrection.make_correction">
+<code class="sig-prename descclassname">GammaCorrection.</code><code class="sig-name descname">make_correction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">measured</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GammaCorrection.html#make_correction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GammaCorrection.make_correction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates a conversion spline of RGB values to corrected values to
+linearize screen luminosity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>measured</strong> – Recorded values of screen luminosity. Passed by
+gammaCorrect, pulled out of text file.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Tuple of spline, slope, and intercept</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="GammaCorrection.gammaCorrect">
+<code class="sig-prename descclassname">GammaCorrection.</code><code class="sig-name descname">gammaCorrect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GammaCorrection.html#gammaCorrect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GammaCorrection.gammaCorrect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prompts user for inputs. Generates evenly spaced RGB values in each gun
+if user desires. Gets splines and prompts for saving.</p>
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="gui.html"
+                        title="previous chapter">gui module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GammaCorrection.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="gui.html" title="gui module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyStim 1.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GammaCorrection module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Alexander Tomlinson.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+    </div>
+  </body>
+</html>
